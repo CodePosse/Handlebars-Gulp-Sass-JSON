@@ -1,0 +1,27 @@
+{
+  "name": "Handlebars-Gulp-Sass-JSON",
+  "version": "0.0.1",
+  "description": "Template generator on Handlebars with inject, JSON, Gulp and Sass.",
+  "author": "Tim Hunold <codeposse@gmail.com>",
+  "repository": "https://github.com/CodePosse/Handlebars-Gulp-Sass-JSON.git",
+  "contributors": [
+    {
+      "name": "Tim Hunold",
+      "email": "codeposse@gmail.com"
+    }
+  ],
+   "devDependencies": {
+    "glob": "^5.0.5",
+    "grunt": "^0.4.5",
+    "gulp": "*",
+    "gulp-data": "^1.2.0",
+    "gulp-inject": "^1.2.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sass": "^1.3.3",
+    "gulp-util": "^3.0.4",
+    "gulp-handlebars": "^4.0.0",
+    "gulp-hb": "^2.5.0",
+  },
+  "dependencies": {
+  }
+}
