@@ -1,0 +1,325 @@
+//
+// Base styles
+//
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $card-bg;
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+  transition:ease-in-out .3s;
+  &:hover{box-shadow:0 0 10px #c0c0c0}
+}
+&.card-tile {border:none;text-align: center;
+  >div {padding:1.25rem;}
+
+
+  .card-image{background-repeat:no-repeat;background-size:cover;height:175px;
+    h4{color:#fff; line-height: 9rem}
+
+  }
+}
+#accordion .card {border-color:$LZblue5;}
+//PRICING
+.card-pricing {text-align: left;color:$LZgraydk;padding:0;margin:1rem 0;font-size: 0.875rem;
+  strong{color:#000;font-size:1rem;}
+  &.pricing-default {border:$LZblue4 1px solid;
+    .price-hdr{border-bottom:$LZblue4 1px solid;margin-bottom:1.25rem;
+      .price {color:#000;}
+    }
+    &.promo {border-color:$LZgreen;
+      .price-hdr{border-bottom-color: $LZgreen}
+      .package-color,.package-title{color:$LZgreen;}
+      .btn.pricing-cta{background-color:$LZgreen;border-color:$LZgreen}
+    }
+    .package-color,.package-title{color:$LZblue4;}
+    .btn.pricing-cta{background-color:$LZblue4}
+  }
+
+  &.pricing-inverse {border:none;
+    .price-hdr{ background-color: $LZblue4;margin-bottom:1.25rem;color:#fff;}
+    .package-color{color:$LZblue4;}
+    .package-title{color:#fff}
+    .btn.pricing-cta{border-color:$LZblue4;background-color:$LZblue4}
+    &.promo {border-color:$LZgreen;
+      .price-hdr{border-bottom-color: $LZgreen; background-color:$LZgreen}
+      .package-color{color:$LZgreen;}
+      .btn.pricing-cta{background-color:$LZgreen;border-color:$LZgreen}
+    }
+  }
+  .price-hdr,.price-body {padding:1rem; .price{font-size: 3.125rem}
+}
+.price-cta-box {padding:0 1rem .5rem}
+.price-cta-box .btn.pricing-cta {color:#fff;padding:.25rem 1rem;}
+
+}
+
+
+
+
+
+
+.card-block {
+  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+  // as much space as possible, ensuring footers are aligned to the bottom.
+  flex: 1 1 auto;
+  padding: $card-spacer-x;
+}
+
+.card-title {
+  margin-bottom: $card-spacer-y;
+}
+
+.card-subtitle {
+  margin-top: -($card-spacer-y / 2);
+  margin-bottom: 0;
+}
+
+.card-text {
+  /*margin-bottom: 0;*/color:#000;
+}
+
+.card-link {
+  @include hover {
+    text-decoration: none;
+  }
+
+  + .card-link {
+    margin-left: $card-spacer-x;
+  }
+}
+
+.card {
+  > .list-group:first-child {
+    .list-group-item:first-child {
+      @include border-top-radius($card-border-radius);
+    }
+  }
+
+  > .list-group:last-child {
+    .list-group-item:last-child {
+      @include border-bottom-radius($card-border-radius);
+    }
+  }
+}
+
+
+//
+// Optional textual caps
+//
+
+.card-header {
+  padding: $card-spacer-y $card-spacer-x;
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  /*background-color: $card-cap-bg;*/
+  /*border-bottom: $card-border-width solid $card-border-color;*/
+  a.expanding-box {display:block; .h3{line-height: 1.25rem;float:right;transition:all .5s;} }
+  &:first-child {
+    @include border-radius($card-border-radius-inner $card-border-radius-inner 0 0);
+  }
+}
+
+.card-footer {
+  padding: $card-spacer-y $card-spacer-x;
+  background-color: $card-cap-bg;
+  border-top: $card-border-width solid $card-border-color;
+
+  &:last-child {
+    @include border-radius(0 0 $card-border-radius-inner $card-border-radius-inner);
+  }
+}
+
+
+//
+// Header navs
+//
+
+.card-header-tabs {
+  margin-right: -($card-spacer-x / 2);
+  margin-bottom: -$card-spacer-y;
+  margin-left: -($card-spacer-x / 2);
+  border-bottom: 0;
+}
+
+.card-header-pills {
+  margin-right: -($card-spacer-x / 2);
+  margin-left: -($card-spacer-x / 2);
+}
+
+
+//
+// Background variations
+//
+
+.card-primary {
+  @include card-variant($brand-primary, $brand-primary);
+}
+.card-success {
+  @include card-variant($brand-success, $brand-success);
+}
+.card-info {
+  @include card-variant($brand-info, $brand-info);
+}
+.card-warning {
+  @include card-variant($brand-warning, $brand-warning);
+}
+.card-danger {
+  @include card-variant($brand-danger, $brand-danger);
+}
+
+// Remove all backgrounds
+.card-outline-primary {
+  @include card-outline-variant($btn-primary-bg);
+}
+.card-outline-secondary {
+  @include card-outline-variant($btn-secondary-border);
+}
+.card-outline-info {
+  @include card-outline-variant($btn-info-bg);
+}
+.card-outline-success {
+  @include card-outline-variant($btn-success-bg);
+}
+.card-outline-warning {
+  @include card-outline-variant($btn-warning-bg);
+}
+.card-outline-danger {
+  @include card-outline-variant($btn-danger-bg);
+}
+
+//
+// Inverse text within a card for use with dark backgrounds
+//
+
+.card-inverse {
+  @include card-inverse;
+}
+
+//
+// Blockquote
+//
+
+.card-blockquote {
+  padding: 0;
+  margin-bottom: 0;
+  border-left: 0;
+}
+
+// Card image
+.card-img {
+  // margin: -1.325rem;
+  @include border-radius($card-border-radius-inner);
+}
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $card-img-overlay-padding;
+}
+
+
+
+// Card image caps
+.card-img-top {
+  @include border-top-radius($card-border-radius-inner);
+}
+.card-img-bottom {
+  @include border-bottom-radius($card-border-radius-inner);
+}
+
+
+// Card deck
+
+@include media-breakpoint-up(sm) {
+  .card-deck {
+    display: flex;
+    flex-flow: row wrap;
+
+    .card {
+      display: flex;
+      flex: 1 0 0;
+      flex-direction: column;
+
+      // Selectively apply horizontal margins to cards to avoid doing the
+      // negative margin dance like our grid. This differs from the grid
+      // due to the use of margins as gutters instead of padding.
+      &:not(:first-child) { margin-left: $card-deck-margin; }
+      &:not(:last-child) { margin-right: $card-deck-margin; }
+    }
+  }
+}
+
+
+//
+// Card groups
+//
+
+@include media-breakpoint-up(sm) {
+  .card-group {
+    display: flex;
+    flex-flow: row wrap;
+
+    .card {
+      flex: 1 0 0;
+
+      + .card {
+        margin-left: 0;
+        border-left: 0;
+      }
+
+      // Handle rounded corners
+      @if $enable-rounded {
+        &:first-child {
+          @include border-right-radius(0);
+
+          .card-img-top {
+            border-top-right-radius: 0;
+          }
+          .card-img-bottom {
+            border-bottom-right-radius: 0;
+          }
+        }
+        &:last-child {
+          @include border-left-radius(0);
+
+          .card-img-top {
+            border-top-left-radius: 0;
+          }
+          .card-img-bottom {
+            border-bottom-left-radius: 0;
+          }
+        }
+
+        &:not(:first-child):not(:last-child) {
+          border-radius: 0;
+
+          .card-img-top,
+          .card-img-bottom {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//
+// Columns
+//
+
+@include media-breakpoint-up(sm) {
+  .card-columns {
+    column-count: $card-columns-count;
+    column-gap: $card-columns-gap;
+
+    .card {
+      display: inline-block; // Don't let them vertically span multiple columns
+      width: 100%; // Don't let their width change
+      margin-bottom: $card-columns-margin;
+    }
+  }
+}

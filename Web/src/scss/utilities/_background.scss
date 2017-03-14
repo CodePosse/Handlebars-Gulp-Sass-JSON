@@ -1,0 +1,27 @@
+//
+// Contextual backgrounds
+//
+
+.bg-faded {
+  background-color: $gray-lightest;
+}
+
+@include bg-variant('.bg-primary', $brand-primary);
+
+@include bg-variant('.bg-success', $brand-success);
+
+@include bg-variant('.bg-info', $brand-info);
+
+@include bg-variant('.bg-warning', $brand-warning);
+
+@include bg-variant('.bg-danger', $brand-danger);
+
+@include bg-variant('.bg-inverse', $brand-inverse);
+
+.bgwhite { background-color: #fff; }
+.bgblue1 { background-color: $LZblue1 }
+.bgblue2 { background-color: $LZblue2 }
+.bgblue3 { background-color: $LZblue3 }
+.bgblue4 { background-color: $LZblue4 }
+.bggraylt { background-color: $LZgraylt }
+.bggraydk { background-color: $LZgraydk }

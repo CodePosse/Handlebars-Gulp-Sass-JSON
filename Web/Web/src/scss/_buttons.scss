@@ -1,0 +1,203 @@
+// scss-lint:disable QualifyingElement
+
+//
+// Base styles
+//
+
+.btn, button {
+  display: inline-block;
+  border-radius: 24px;
+  border: solid 2px $LZblue4;
+  color:$LZblue4;
+  line-height: 2rem;
+  font-size:.75rem;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #fff;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+  user-select: none;
+  
+  //@include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+  @include transition(all .2s ease-in-out);
+  &.cta, .btn-lg{line-height: 2.75rem;border-radius:28px;font-size:1rem;min-width: 10rem;}
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      
+    }
+  }
+
+  @include hover-focus {
+    text-decoration: none;
+    opacity:.65;
+  }
+  &.focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {opacity:.5;
+  
+    background-image: none;
+    outline: 0;
+    @include box-shadow($btn-active-box-shadow);
+  
+}
+  &.disabled,
+  &:disabled {
+    cursor: $cursor-disabled;
+    opacity: .65;
+    @include box-shadow(none);
+  }
+    &.btnBlack{background-color:#000;color:#fff;border-color:#000}
+    &.btnBlueLt {color:#fff;background-color:$LZblue4; &.dot{ line-height: .75rem;padding: 9px 13px}}
+    &.btnBlueDark{background-color:$LZblue2;color:#fff;border-color:$LZblue2}
+    &.btnGray{background-color: $LZgraylt;color:#fff; border-color: $LZgraylt}
+    &.btnGrayDark{background-color: $LZgraydk;color:#fff; border-color: $LZgraydk}
+    &.btnGreen{background-color: $LZgreen;color:#fff; border-color: $LZgreen}
+    &.btnGreen{background-color: $LZgreen;color:#fff; border-color: $LZgreen}
+    &.btnRed{background-color: $LZpink;color:#fff; border-color: $LZpink}
+    &.btnYellow{background-color: $LZyellow;color:#fff; border-color: $LZyellow}
+    &.btnBlackGhost{color:#000;background-color:#fff;border-color:#000}
+    &.btnBlueDarkGhost{color:$LZblue2;background-color:#fff;border-color:$LZblue2}
+    &.btnGrayGhost{color: $LZgraylt;background-color:#fff; border-color: $LZgraylt}
+    &.btnGrayDarkGhost{color: $LZgraydk;background-color:#fff; border-color: $LZgraydk}    
+    &.btnGreenGhost{color: $LZgreen;background-color:#fff; border-color: $LZgreen}
+    &.btnRedGhost{color: $LZpink;background-color:#fff; border-color: $LZpink}
+    &.btnYellowGhost{color: $LZyellow;background-color:#fff; border-color: $LZyellow}
+    &.circle{ line-height: .75rem;padding: 9px 13px}
+
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+.btn-primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+.btn-secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-info {
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+.btn-success {
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+.btn-warning {
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+.btn-danger {
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+
+// Remove all backgrounds
+.btn-outline-primary {
+  @include button-outline-variant($btn-primary-bg);
+}
+.btn-outline-secondary {
+  @include button-outline-variant($btn-secondary-border);
+}
+.btn-outline-info {
+  @include button-outline-variant($btn-info-bg);
+}
+.btn-outline-success {
+  @include button-outline-variant($btn-success-bg);
+}
+.btn-outline-warning {
+  @include button-outline-variant($btn-warning-bg);
+}
+.btn-outline-danger {
+  @include button-outline-variant($btn-danger-bg);
+}
+
+
+//
+// Link buttons
+//
+
+/* Make a button look and behave like a link
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &:disabled {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  @include hover {
+    border-color: transparent;
+  }
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+    opacity:.65;
+  }
+  &:disabled {
+    @include hover-focus {
+      color: $btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+*/
+
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: $btn-block-spacing-y;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
