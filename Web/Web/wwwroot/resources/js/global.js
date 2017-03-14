@@ -1,1 +1,0 @@
-"use strict";$(".accordion-heading").click(function(){$(this).parent().toggleClass("accordion-item-active")});console.info('global.js loaded');
