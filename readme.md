@@ -1,5 +1,6 @@
 #PatternLibrary
-Table of Contents.
+Table of Contents
+(updated 3/14/17 Pi day!)
 
  - [Overview](#overview)
  - [Requirements](#requirements)
